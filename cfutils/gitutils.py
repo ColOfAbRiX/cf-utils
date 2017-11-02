@@ -28,16 +28,32 @@
 
 import os
 import git
+
 from execute import exec_cmd
 
-def get_git_root():
+
+def is_git_repo(path=None):
+    """
+    Checks if the current directory is part of a GIT repository
+    """
+    if path is None:
+        path = os.getcwd()
+
+    try:
+        git_repo = git.Repo(path, search_parent_directories=True)
+    except git.exc.InvalidGitRepositoryError:
+        return False
+
+    return True
+
+def get_git_root(path=None):
     """
     Returns the root path of the GIT repository on the Current Working Directory
     """
-    git_repo = git.Repo(
-        os.getcwd(),
-        search_parent_directories=True
-    )
+    if path is None:
+        path = os.getcwd()
+
+    git_repo = git.Repo(path, search_parent_directories=True)
     return git_repo.git.rev_parse("--show-toplevel")
 
 
