@@ -4,6 +4,18 @@
 
 Collection of several mixed functions and objects used for various purposes and that of very common usage.
 
-### Credits
+## Installation
 
-Fabrizio Colonna <colofabrix@tin.it>
+Install using PIP:
+
+```
+sudo pip install https://github.com/ColOfAbRiX/cf-utils/archive/master.zip
+```
+
+## License
+
+MIT
+
+## Author Information
+
+[Fabrizio Colonna](mailto:colofabrix@tin.it)
